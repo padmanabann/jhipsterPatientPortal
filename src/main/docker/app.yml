@@ -1,0 +1,14 @@
+version: '2'
+services:
+    learnone-app:
+        image: learnone
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:sqlserver://learnone-mssql:1433;database=jhitest
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    learnone-mssql:
+        extends:
+            file: mssql.yml
+            service: learnone-mssql
