@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "com.mahakavi.learnone"
     },
-    "jhipsterVersion": "4.10.1",
+    "jhipsterVersion": "4.10.2",
     "baseName": "learnone",
     "packageName": "com.mahakavi.learnone",
     "packageFolder": "com/mahakavi/learnone",
