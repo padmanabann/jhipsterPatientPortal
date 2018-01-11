@@ -57,7 +57,7 @@ public final class SecurityUtils {
         Authentication authentication = securityContext.getAuthentication();
         if (authentication != null) {
             return authentication.getAuthorities().stream()
-                .noneMatch(grantedAuthority -> grantedAuthority.getAuthority().equals(AuthoritiesConstants.ANONYMOUS));
+                .noneMatch(grantedAuthority -> grantedAuthority.getAuthority().equals(AuthoritiesConstants.PATIENT));
         }
         return false;
     }

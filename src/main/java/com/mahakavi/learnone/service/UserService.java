@@ -85,6 +85,7 @@ public class UserService {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
+        Authority patientAuthority = null;
         Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(userDTO.getPassword());
         newUser.setLogin(userDTO.getLogin());
@@ -100,6 +101,11 @@ public class UserService {
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
+        Set<String> authoritiesString =userDTO.getAuthorities();
+        if(authoritiesString.contains(AuthoritiesConstants.PATIENT)){
+            patientAuthority = authorityRepository.findOne(AuthoritiesConstants.PATIENT);
+            authorities.add(patientAuthority);
+        }
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);

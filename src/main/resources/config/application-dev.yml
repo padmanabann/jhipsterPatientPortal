@@ -53,7 +53,7 @@ spring:
 
 liquibase:
     contexts: dev
-
+    drop-first: true
 # ===================================================================
 # To enable SSL, generate a certificate using:
 # keytool -genkey -alias learnone -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
@@ -72,7 +72,7 @@ liquibase:
 #        keyAlias: learnone
 # ===================================================================
 server:
-    port: 8080
+    port: 9100
 
 # ===================================================================
 # JHipster specific properties
@@ -100,7 +100,7 @@ jhipster:
                 token-validity-in-seconds-for-remember-me: 2592000
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: learnone@localhost
-        base-url: http://127.0.0.1:8080
+        base-url: http://127.0.0.1:9100
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite: # Use the "graphite" Maven profile to have the Graphite dependencies
