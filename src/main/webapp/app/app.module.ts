@@ -9,6 +9,7 @@ import { LearnoneHomeModule } from './home/home.module';
 import { LearnoneAdminModule } from './admin/admin.module';
 import { LearnoneAccountModule } from './account/account.module';
 import { LearnoneEntityModule } from './entities/entity.module';
+import {PatientPortalPatientModule } from './patient/patient.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -35,6 +36,7 @@ import {
         LearnoneAdminModule,
         LearnoneAccountModule,
         LearnoneEntityModule,
+        PatientPortalPatientModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
